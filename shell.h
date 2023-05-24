@@ -3,6 +3,32 @@
 #include <unistd.h>
 #include <stddef.h>
 
+/**
+ * struct list_p2 - singly linked list
+ * @ptr: a malloced string
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ */
+typedef struct list_p2
+{
+	char *ptr;
+	struct list_p2 *next;
+} list_s;
+
+/**
+ * struct list_p - singly linked list
+ * @ptr: a malloced address
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ */
+typedef struct list_p
+{
+	void *ptr;
+	struct list_p *next;
+} list_t;
+
 int linum(int add);
 char *get_prog_name(char *name);
 void my_error(char *command, int status, char *extra);
@@ -42,7 +68,7 @@ int sizeof_command(char **tokens);
 int _isdigit(int c);
 int has_newline(char *input);
 void shiftbuffer(char *input, int newline_index, int filled);
-char *_itoa(int num);
+//char *_itoa(int num);
 char *_reverse(char *tr, int n);
 int env_builtin(void);
 char **get_path();
@@ -63,31 +89,5 @@ void do_exit(int fd, char *msg, int code);
 ssize_t else_handle_input(char *lineptr, int stream, char *input, int filled);
 ssize_t _getline(char *lineptr, int stream);
 char **_strtok(char *str, char *delim);
-
-/**
- * struct list_p2 - singly linked list
- * @ptr: a malloced string
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- */
-typedef struct list_p2
-{
-	char *ptr;
-	struct list_p2 *next;
-} list_s;
-
-/**
- * struct list_p - singly linked list
- * @ptr: a malloced address
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- */
-typedef struct list_p
-{
-	void *ptr;
-	struct list_p *next;
-} list_t;
 
 #endif /*SHELL_H*/
