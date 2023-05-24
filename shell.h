@@ -68,7 +68,7 @@ int sizeof_command(char **tokens);
 int _isdigit(int c);
 int has_newline(char *input);
 void shiftbuffer(char *input, int newline_index, int filled);
-char *__itoa(int num);
+char *_itoa(int num);
 char *_reverse(char *tr, int n);
 int env_builtin(void);
 char **get_path();
