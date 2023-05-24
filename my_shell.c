@@ -46,7 +46,7 @@ void my_error(char *command, int status, char *extra)
 	char *msg = NULL;
 
 	name = get_prog_name(NULL);
-	line = _itoa(linum(0));
+	line = __itoa(linum(0));
 	write(STDERR_FILENO, name, _strlen(name));
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, line, _strlen(line));
